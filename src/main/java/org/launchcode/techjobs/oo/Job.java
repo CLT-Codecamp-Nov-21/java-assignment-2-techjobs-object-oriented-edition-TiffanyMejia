@@ -48,6 +48,33 @@ public class Job {
         return Objects.hash(id);
     }
 
+    @Override
+    public String toString() {
+        if (isEmpty(name).equals("Data not available") &&
+            isEmpty(employer.toString()).equals("Data not available") &&
+            isEmpty(location.toString()).equals("Data not available") &&
+            isEmpty(positionType.toString()).equals("Data not available") &&
+            isEmpty(coreCompetency.toString()).equals("Data not available")
+        ) {
+            return "OOPS! This job does not seem to exist.";
+        }
+        return "\n" +
+                "ID: " + id +
+                "\nName: " + isEmpty(name) +
+                "\nEmployer: " + isEmpty(employer.toString()) +
+                "\nLocation: " + isEmpty(location.toString()) +
+                "\nPosition Type: " + isEmpty(positionType.toString()) +
+                "\nCore Competency: " + isEmpty(coreCompetency.toString()) +
+                "\n";
+    }
+
+        public static String isEmpty(String str) {
+        if (str.equals("")) {
+            return "Data not available";
+        }
+        return str;
+    }
+
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
@@ -64,7 +91,7 @@ public class Job {
     }
 
     public Employer getEmployer() {
-        return employer;
+      return employer;
     }
 
     public void setEmployer(Employer employer) {
