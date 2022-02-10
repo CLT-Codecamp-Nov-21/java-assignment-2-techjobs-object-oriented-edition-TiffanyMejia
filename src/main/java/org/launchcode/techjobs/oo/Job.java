@@ -8,6 +8,8 @@ public class Job {
     private static int nextId = 1;
 
     private String name;
+
+    //each of these are a  "job" field  -> create job field
     private Employer employer;
     private Location location;
     private PositionType positionType;
@@ -19,6 +21,8 @@ public class Job {
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
+
+
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
